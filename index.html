@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+</head>
+
+<body>
+<div class="section">
+  <div class="container">
+    <form data-component="signin" class="form" action="post">
+      <div class="field"><label class="label" for="username">Username</label>
+        <input type="text" class="input" id="username" name="username" data-bind-value="username"
+               data-class="this.usernameClass"></div>
+        <span class="help" data-text="`Username length: ${this.username.length}`"></span>
+      <div class="field">
+        <label class="label" for="password">Password</label>
+        <input class="input" id="password" type="password" name="password" data-bind-value="password"
+               data-class="this.passwordClass">
+        <span class="help" data-text="`Password strength: ${this.score()}`"></span>
+      </div>
+      <div class="field">
+        <label class="label" for="password2">Password (confirm)</label>
+        <input class="input" id="password2" type="password" name="password" data-bind-value="password2"
+               data-class="this.password2Class">
+        <span class="help" data-text="`Passwords match: ${this.passwordsMatch}`"></span>
+      </div>
+
+      <button type="submit" class="button is-primary" data-disabled="!this.canSignup">Submit</button>
+    </form>
+  </div>
+</div>
+
+<script src="./index.ts"></script>
+</body>
+
+</html>
